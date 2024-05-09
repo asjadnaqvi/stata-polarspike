@@ -145,6 +145,16 @@ polarspike rgdp_pc_ppp, by(countryname) labgap(6) labsize(0.9) offset(10) rotate
 <img src="/figures/polarspike7.png" width="100%">
 
 
+Condition the labels
+
+```
+polarspike rgdp_pc_ppp, by(countryname) labgap(6) labsize(0.9) offset(10) rotate(45) colorby(regionname) gap(0) radmin(4) radmax(6) nolegend	///
+	title("Real GDP per capita in 2022 (constant 2017 USD)") note("Source: World Bank Open Data", size(1.2))
+```
+
+<img src="/figures/polarspike7.png" width="100%">
+
+
 
 ## Plotting change
 
