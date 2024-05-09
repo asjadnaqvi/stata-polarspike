@@ -1,0 +1,10 @@
+v 1.0
+d 'POLARSPIKE': A Stata package for polar bar graphs
+d Distribution-Date: 20240509
+d Asjad Naqvi
+d asjadnaqvi@gmail.com
+d https://medium.com/the-stata-guide
+p polar
+p spike
+
+
