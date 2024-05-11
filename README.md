@@ -67,19 +67,6 @@ polarspike var [if] [in], by(var1) [ over(var2) ]
 
 See the help file `help polarspike` for details.
 
-The basic use for wide form is:
-
-```
-polarspike variables
-```
-
-and for long form is:
-
-```
-polarspike variable, by()
-```
-
-where `variable(s)` are a set of numeric variables.
 
 ## Examples
 
