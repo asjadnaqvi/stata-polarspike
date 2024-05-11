@@ -4,6 +4,8 @@
 
 ---
 
+![polarspike_banner](https://github.com/asjadnaqvi/stata-polarspike/assets/38498046/78634d47-c365-49bf-a283-0226eb402bc7)
+
 
 # polarspike v1.0
 (09 May 2024)
