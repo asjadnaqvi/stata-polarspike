@@ -19,7 +19,7 @@ version 15
 		[ LABGap(real 5) LABSize(string) LABColor(string) labcond(real -1e15) 		] ///
 		[ colorby(varname) LEGPOSition(real 6) LEGCOLumns(real 3) LEGSize(string) NOLEGend	] ///
 		[ OGap(real 0.9) OSize(string) OColor(string) 					 			] ///
-		[ aspect(real 1) xsize(real 1) ysize(real 1) scheme(passthru) note(passthru) subtitle(passthru)	*	]  
+		[ aspect(real 1) xsize(real 1) ysize(real 1) *	]  
 
 		
 	// check dependencies
@@ -28,7 +28,6 @@ version 15
 		display as error "The {bf:palettes} package is missing. Install the {stata ssc install palettes, replace:palettes} and {stata ssc install colrspace, replace:colrspace} packages."
 		exit
 	}
-	
 	
 	if "`over'"!="" & "`colorby'"!="" {
 		display as error "Only one of {bf:over()} or {bf:colorby()} can be specified."
@@ -43,7 +42,6 @@ version 15
 	if "`radmin'" == "0" local radmin 0.001 // to avoid irregular outputs.
 
 
-	
 	marksample touse, strok
 	
 quietly {	
@@ -204,7 +202,6 @@ preserve
 	if "`labsize'" 	== "" local labsize 	1.1
 	if "`ocolor'" 	== "" local ocolor 		black
 	if "`osize'" 	== "" local osize 		1.1	
-
 	if "`legsize'" 	== "" local legsize 	1.5
 	
 	// spikes	
@@ -226,7 +223,7 @@ preserve
 
 	foreach x of local lvls {
 		
-		colorpalette `palette', n("`items'") nograph `options'
+		colorpalette `palette', n("`items'") nograph `poptions'
 		
 		if "`clrbytrack'" == "0" {
 			local cont `cont' (pcspike _yval _xval _ycir _xcir if `over' =="`x'", lc("`r(p`i')'") lw(`lwidth'))  
@@ -307,9 +304,8 @@ preserve
 			xlabel(-`edge' `edge', nogrid) ///
 			ylabel(-`edge' `edge', nogrid) /// 
 			yscale(off) xscale(off)	///
-			`mylegend'	///
-			xsize(`xsize') ysize(`ysize') aspect(`aspect') ///
-			`options'  `scheme' `note'
+			xsize(`xsize') ysize(`ysize') aspect(`aspect')	///
+			`mylegend' `options'
 							
 		
 */
